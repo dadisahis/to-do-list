@@ -23,7 +23,7 @@ const TaskDetail = ({
       </button>
     </div>
     <div>
-      <select onChange={setTaskGroup} value={task.group}>
+      <select onChange={setTaskGroup}>
         {groups.map((group) => (
           <option key={group.id} value={group.id}>
             {group.name}
@@ -43,7 +43,6 @@ const mapStateToProps = (state, ownProps) => {
   let id = ownProps.match.params.id;
   let task = state.tasks.find((task) => task.id === id);
   let groups = state.groups;
-  console.log(state.groups);
   return {
     id,
     task,
